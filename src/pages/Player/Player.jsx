@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import "./Player.css";
 import back_arrow_icon from "../../assets/back_arrow_icon.png";
 import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Player = () => {
   const {id} = useParams();
+  const navigate = useNavigate();
   const [apiData, setApiData] = useState({
     name: "",
     key: "",
@@ -33,7 +35,7 @@ const Player = () => {
 
   return (
     <div className="player">
-      <img src={back_arrow_icon} alt="" />
+      <img src={back_arrow_icon} alt="" onClick={() => navigate(-1)}/>{/*onClick={() => navigate(-2)}*/}
       <iframe
         width="90%"
         height="90%"
