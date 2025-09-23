@@ -24,10 +24,23 @@
     display: flex;
     list-style: none;
     gap: 20px;
+    position: relative;
 }
 
 .navbar-left ul li {
     cursor: pointer;
+    transition: opacity 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.navbar-left ul:hover li {
+    opacity: 0.5;
+}
+
+.navbar-left ul li:hover {
+    opacity: 1;
+    transform: scale(1.05);
 }
 
 .navbar-right {
